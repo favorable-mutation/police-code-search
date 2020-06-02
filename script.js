@@ -1,7 +1,15 @@
-function search (fuses, codes, str) {
+function multiSearch (fuses, data, str) {
+  return _.reduce(
+    _.split(str, ' '),
+    (acc, subStr) => _.merge(acc, search(fuses, data, subStr)),
+    {}
+  )
+}
+
+function search (fuses, data, str) {
   return _.mapValues(
-    codes,
-    (vals, code) => _.pick(vals, _.map(fuses[code].search(str), 'item'))
+    data,
+    (vals, key) => _.pick(vals, _.map(fuses[key].search(str), 'item'))
   )
 }
 
@@ -24,7 +32,7 @@ function generateResults (id, data, fuses) {
     results.empty()
     render(
       event.target.value
-        ? search(fuses, data, event.target.value)
+        ? multiSearch(fuses, data, event.target.value)
         : data,
       results
     )
@@ -32,10 +40,8 @@ function generateResults (id, data, fuses) {
 }
 
 function getJSONBy (id) {
-  console.log(id)
-  $.getJSON(`https://griffin-rademacher.info/bpd-code-search/${id}s.json`, (data) => {
+  $.getJSON(`${id}s.json`, (data) => {
     const fuses = _.mapValues(data, (vals, key) => new Fuse(_.keys(vals), {}))
-    console.log(fuses)
     generateResults(id, data, fuses)
   })
 }
