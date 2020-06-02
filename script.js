@@ -14,23 +14,31 @@ function render (codes, results) {
   })
 }
 
-$.getJSON('codes.json', (codes) => {
-  const searchBar = document.getElementById('code-search')
-  const results = $('#results')
+function generateResults (id, data, fuses) {
+  const searchBar = document.getElementById(`${id}-search`)
+  const results = $(`#${id}-results`)
 
-  const fuses = _.mapValues(codes, (vals) => {
-    return new Fuse(_.filter(_.keys(vals), (key) => !key.startsWith('_')), {})
-  })
-
-  render(codes, results)
+  render(data, results)
 
   searchBar.addEventListener('input', (event) => {
     results.empty()
     render(
       event.target.value
-        ? search(fuses, codes, event.target.value)
-        : codes,
+        ? search(fuses, data, event.target.value)
+        : data,
       results
     )
   })
-})
+}
+
+function getJSONBy (id) {
+  console.log(id)
+  $.getJSON(`https://griffin-rademacher.info/bpd-code-search/${id}s.json`, (data) => {
+    const fuses = _.mapValues(data, (vals, key) => new Fuse(_.keys(vals), {}))
+    console.log(fuses)
+    generateResults(id, data, fuses)
+  })
+}
+
+getJSONBy('code')
+getJSONBy('subcode')

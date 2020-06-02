@@ -3,20 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <title>BPD Code Search</title>
+  <link rel="stylesheet" type="text/css" href="./theme.css" />
   <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.0.0"></script>
 </head>
 <body>
-  <label for="code-search">
+  <h2>
     Start typing to search for the meaning of a Boston Police Radio Code.
+  </h2>
+  <label for="code-search">
+    Code:
   </label>
-  <br>
-  <br>
   <input type="search" id="code-search">
+  <label for="code-search">
+    Subcode:
+  </label>
+  <input type="search" id="subcode-search">
   <br>
   <br>
-  <div id="results"></div>
+  <div id="container">
+    <div id="code-results"></div>
+    <div id="subcode-results"></div>
+  </div>
   <script src="./script.js"></script>
 </body>
 </html>
