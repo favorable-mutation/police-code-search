@@ -119,5 +119,32 @@
     "103": "natural disaster",
     "104": "hazardous materials (HAZMAT) or weapons of mass destruction (WMD)",
     "105": "active shooter"
+  },
+  "additional_codes": {
+    "ocean nora": "on the air / in service",
+    "ocean frank": "off the air / signing off",
+    "dk": "intoxicated",
+    "charlie robert": "clear",
+    "adam robert": "arriving on scene",
+    "l20": "out of the car longer than 20 minutes",
+    "r": "short for 'report'",
+    "fio": "field intelligence",
+    "209a": "a reference to Chapter 209A of the Massachusetts General Laws (MGL), usually used to refer to protective restraining orders",
+    "94c": "a reference to MGL, Chapter 94C, concerning controlled substances. In practice, “94C” is almost always used to reference marijuana, although it can refer to any illegal drug",
+    "go to 7": "a request that an officer switch to channel 7, a unit-to-unit channel used by nearly everyone",
+    "go to 9": "a request that an officer switch to channel 9, a unit-to-unit channel used by detectives",
+    "go up": "a reference to going up to channel 7, a unit-to-unit channel used by nearly everyone",
+    "nova base": "channel 8; charged with “info requests” such as license status and registration lookups",
+    "abpo": "short for 'assault and battery on a police officer'",
+    "abdw": "short for 'assault and battery with a deadly weapon'",
+    "all out": "a broadcast (preceded by a long steady tone) occurring on all channels of the BPD radio system, used for announcements that need to reach multiple channels",
+    "bolo": "'be on the lookout' - what most people call an APB. Given for fresh, major crimes, like a suspect on the loose or a stolen car",
+    "bop": "Board of Probations- a BOP is essentially someone’s criminal history",
+    "good to go": "indicates that the person described has cause for arrest",
+    "occupied twice": "the number of people in a car",
+    "occupied times two": "the number of people in a car",
+    "edt": "Emergency Deployment Team. Designated officers carry tactical equipment during their shifts, and are able to respond to any district in the city when the EDT is deployed",
+    "ps": "patrol supervisor - typically a sergeant; help in the field where officers need a supervisor",
+    "ds": "duty supervisor - generally a lieutenant assigned to the station, overseeing their district"
   }
 }
