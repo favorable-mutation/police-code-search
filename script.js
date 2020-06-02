@@ -41,10 +41,9 @@ function generateResults (id, data, fuses) {
 
 function getJSONBy (id) {
   $.getJSON(`${id}s.json`, (data) => {
-    const fuses = _.mapValues(data, (vals, key) => new Fuse(_.keys(vals), {}))
+    const fuses = _.mapValues(data, (vals, key) => new Fuse(_.keys(vals), { threshold: 0.4 }))
     generateResults(id, data, fuses)
   })
 }
 
 getJSONBy('code')
-getJSONBy('subcode')
